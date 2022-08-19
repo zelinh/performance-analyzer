@@ -6,11 +6,11 @@
 buildscript {
 
     ext {
-        opensearch_version = System.getProperty("opensearch.version", "2.2.0-SNAPSHOT")
+        opensearch_version = System.getProperty("opensearch.version", "2.2.1-SNAPSHOT")
         isSnapshot = "true" == System.getProperty("build.snapshot", "true")
         buildVersionQualifier = System.getProperty("build.version_qualifier", "")
 
-        // 2.2.0-SNAPSHOT -> 2.2.0.0-SNAPSHOT
+        // 2.2.1-SNAPSHOT -> 2.2.1.0-SNAPSHOT
         version_tokens = opensearch_version.tokenize('-')
         opensearch_build = version_tokens[0] + '.0'
         if (buildVersionQualifier) {
@@ -563,7 +563,7 @@ task integTestRemote(type: RestIntegTestTask) {
 String bwcVersion = "1.1.0.0"
 String baseName = "paBwcCluster"
 String bwcFilePath = "src/test/resources/org/opensearch/performanceanalyzer/bwc/"
-String bwcRemoteFile = "https://ci.opensearch.org/ci/dbc/bundle-build/1.1.0/20210930/linux/x64/builds/opensearch/plugins/opensearch-performance-analyzer-1.1.0.0.zip"
+String bwcRemoteFile = "https://ci.opensearch.org/ci/dbc/bundle-build/1.1.0/2.2.1930/linux/x64/builds/opensearch/plugins/opensearch-performance-analyzer-1.1.0.0.zip"
 String bwcOpenSearchPlugin = "opensearch-performance-analyzer-1.1.0.0.zip"
 
 2.times {i ->
